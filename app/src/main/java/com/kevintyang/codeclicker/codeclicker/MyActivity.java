@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-
+import java.util.TimerTask;
+import android.widget.TextView;
+import java.util.Timer;
 
 public class MyActivity extends Activity {
 
@@ -12,6 +14,42 @@ public class MyActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
+        Ticker tick = new Ticker();
+        tick.start();
+        //starts counting the code per second/money per second
+
+        Timer timer = new Timer();
+
+        timer.scheduleAtFixedRate(new TimerTask(){
+            public void run(){
+                updateMoneyTextView();
+                updateCodeTextView();
+            }
+        }, 50, 100);
+
+
+
+    }
+
+    public void onPause(){
+        super.onPause();
+
+    }
+
+    public void updateMoneyTextView() {
+
+        TextView textView = (TextView) findViewById(R.id.cashTextView);
+        textView.setText(MoneyCounters.getCurrentStr());
+
+        return;
+    }
+
+    public void updateCodeTextView() {
+
+        TextView textView = (TextView) findViewById(R.id.codeTextView);
+        textView.setText(CodeCounters.getCurrentStr());
+
+        return;
     }
 
 
@@ -33,4 +71,7 @@ public class MyActivity extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+
 }
