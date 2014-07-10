@@ -11,8 +11,15 @@ public class MyActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        //Remove title bar
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        this.setContentView(R.layout.activity_my);
+
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my);
+
         Ticker tick = new Ticker();
         tick.start();
         //starts counting the code per second/money per second
@@ -64,6 +71,7 @@ public class MyActivity extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 
 
 
