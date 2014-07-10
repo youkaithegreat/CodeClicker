@@ -4,9 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import java.util.TimerTask;
+
 import android.widget.TextView;
-import java.util.Timer;
+import android.view.*;
 
 public class MyActivity extends Activity {
 
@@ -18,18 +18,14 @@ public class MyActivity extends Activity {
         tick.start();
         //starts counting the code per second/money per second
 
-        Timer timer = new Timer();
 
-        timer.scheduleAtFixedRate(new TimerTask(){
-            public void run(){
-                updateMoneyTextView();
-                updateCodeTextView();
-            }
-        }, 50, 100);
 
 
 
     }
+
+
+
 
     public void onPause(){
         super.onPause();
@@ -50,6 +46,11 @@ public class MyActivity extends Activity {
         textView.setText(CodeCounters.getCurrentStr());
 
         return;
+    }
+
+    public void codeClick(View view){
+        CodeCounters.codeClick();
+        updateCodeTextView();
     }
 
 

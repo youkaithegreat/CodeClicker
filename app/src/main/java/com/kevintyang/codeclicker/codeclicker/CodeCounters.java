@@ -13,7 +13,7 @@ public class CodeCounters {
 
     private static long clickMultiplier = 1;
 
-    public static void clickCode(View view){
+    public static void codeClick(){
 
         currentCodeCount += clickMultiplier;
     }
