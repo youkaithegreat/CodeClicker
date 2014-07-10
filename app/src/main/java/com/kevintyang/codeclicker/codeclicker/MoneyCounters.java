@@ -29,6 +29,7 @@ public class MoneyCounters {
 
     public static void moneyClick()
     {
+
         currentMoneyCount = currentMoneyCount + moneyMultiplier;
     }
 

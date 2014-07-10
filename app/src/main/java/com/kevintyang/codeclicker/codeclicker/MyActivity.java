@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-
 import android.widget.TextView;
 import android.view.*;
 
@@ -18,14 +17,7 @@ public class MyActivity extends Activity {
         tick.start();
         //starts counting the code per second/money per second
 
-
-
-
-
     }
-
-
-
 
     public void onPause(){
         super.onPause();
