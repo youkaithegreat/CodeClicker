@@ -1,16 +1,24 @@
 package com.kevintyang.codeclicker.codeclicker;
 
 import android.app.Activity;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.*;
 
 public class MyActivity extends Activity {
 
+    //private variables to avoid creating additional objects
+    private ImageView mCodeButton;
+    private ImageView one = null;
+    private ImageView two = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
         //Remove title bar
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -18,7 +26,18 @@ public class MyActivity extends Activity {
         this.setContentView(R.layout.activity_my);
 
 
-        super.onCreate(savedInstanceState);
+
+        //Get some variables
+        mCodeButton = (ImageView)findViewById(R.id.keyboardButton);
+
+        mCodeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                animateCodeButton();
+                codeClick();
+            }
+        });
+
 
         Ticker tick = new Ticker();
         tick.start();
@@ -47,11 +66,19 @@ public class MyActivity extends Activity {
         return;
     }
 
-    public void codeClick(View view){
+    public void codeClick(){
         CodeCounters.codeClick();
         updateCodeTextView();
     }
 
+    private void animateCodeButton() {
+        mCodeButton.setImageResource(R.drawable.keyboard_click);
+        AnimationDrawable buttonPress = (AnimationDrawable) mCodeButton.getDrawable();
+        if(buttonPress.isRunning()) {
+            buttonPress.stop();
+        }
+        buttonPress.start();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
