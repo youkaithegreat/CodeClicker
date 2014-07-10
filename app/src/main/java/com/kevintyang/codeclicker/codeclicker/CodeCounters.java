@@ -11,15 +11,15 @@ public class CodeCounters {
 
     private static long currentCodeCount = 0;
 
-    private static long clickMultiplier = 1;
+    private static long clickValue = 1;
 
     public static void codeClick(){
 
-        currentCodeCount += clickMultiplier;
+        currentCodeCount += clickValue;
     }
 
     //synchronized, so that we don't get math errors.
-    public synchronized static void addCodeValue(){
+    public synchronized static void addCodePerSecondValue(){
         currentCodeCount = codePerSecond + currentCodeCount;
     }
 
@@ -31,6 +31,12 @@ public class CodeCounters {
     public static String getCurrentStr(){
 
         return "//" + currentCodeCount;
+    }
+
+    public static void increaseClickValue(int newClickValue){
+        //increases amount added per click
+        clickValue += newClickValue;
+
     }
 
 

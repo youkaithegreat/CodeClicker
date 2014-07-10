@@ -16,8 +16,8 @@ public class Ticker extends Thread{
 
                 try {
                     //adds the value of each per second
-                    CodeCounters.addCodeValue();
-                    MoneyCounters.addMoneyValue();
+                    CodeCounters.addCodePerSecondValue();
+                    MoneyCounters.addMoneyPerSecondValue();
                     sleep(990);
                 }catch (InterruptedException e) {
                     // TODO Auto-generated catch block
