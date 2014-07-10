@@ -29,17 +29,6 @@
         android:layout_marginRight="30dp" />
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/keyboardButton"
-        android:src="@drawable/keyboard_shadow_7"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="false"
-        android:longClickable="true"
-        android:layout_marginBottom="70dp" />
-
-    <ImageView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/code_output"
@@ -61,5 +50,25 @@
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="10dp"
         android:layout_marginRight="15dp" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cupAndPenWithBar"
+        android:src="@drawable/cup_and_pens_with_bar_with_wire"
+        android:layout_marginTop="125dp"
+        android:layout_below="@+id/cash_output"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/keyboardButton"
+        android:src="@drawable/keyboard_shadow_7"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:longClickable="true"
+        android:layout_marginBottom="70dp" />
 
 </RelativeLayout>
