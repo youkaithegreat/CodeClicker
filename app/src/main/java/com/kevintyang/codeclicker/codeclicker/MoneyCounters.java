@@ -36,5 +36,10 @@ public class MoneyCounters {
         clickValue += newClickValue;
     }
 
+    public static void subtractCostOfUpgrades(int cost){
+
+        currentMoneyCount = currentMoneyCount - cost;
+    }
+
 
 }

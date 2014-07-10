@@ -21,16 +21,16 @@ public class CodeClickUpgrades {
         costMultiplier = costMultiplier;
     }
 
-    public void buyUpgrade(){
+    public synchronized void buyUpgrade(){
         if(MoneyCounters.getCurrentMoneyCount() >= cost && qty <maxQty) {
             //create a pop up message on GUI
-
+            MoneyCounters.subtractCostOfUpgrades(cost);
             CodeCounters.increaseClickValue(clickAddAmount);
             qty++;
-
-            //update upgrade view with new text
+           //update upgrade view with new text
 
             cost = cost * costMultiplier;
+            //changes cost for the next upgrade or sets purchase value to non existent
 
             //create a GUI message that says insufficient funds(?)
         }
