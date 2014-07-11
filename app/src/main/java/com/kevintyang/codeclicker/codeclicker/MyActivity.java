@@ -42,6 +42,13 @@ public class MyActivity extends Activity {
         mCodeButton = (ImageView)findViewById(R.id.keyboardButton);
         mUpgradeButton = (ImageView)findViewById(R.id.upgrades_button);
 
+        mUpgradeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
         mCodeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
