@@ -2,6 +2,7 @@ package com.kevintyang.codeclicker.codeclicker;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Build;
 import android.os.Bundle;
@@ -11,11 +12,13 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
 /**
  * Created by jameshuang on 7/11/14.
  */
 public class UpgradeScreen extends Activity{
+    private ImageView mExitButton;
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
@@ -29,6 +32,21 @@ public class UpgradeScreen extends Activity{
         //Sets screen orientation to Portrait. We are also changing orientation in the xml, I might move it to the manifest . .
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.screen_upgrade);
+
+        mExitButton = (ImageView)findViewById(R.id.exit_button);
+
+        mExitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendMessage();
+            }
+
+        });
+    }
+
+    private void sendMessage() {
+        Intent intent = new Intent(UpgradeScreen.this, MyActivity.class);
+        startActivity(intent);
     }
 
     protected void onResume(){

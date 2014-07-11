@@ -3,32 +3,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_blue" >
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="70dp"
-        android:id="@+id/UPGRADES"
-        android:text="U P G R A D E S"
-        android:phoneNumber="false"
-        android:textSize="32sp"
-        android:textColor="@color/white"
-        android:background="@color/menu_bar_gray"
-        android:shadowColor="@color/shadow_color"
-        android:shadowDy="5"
-        android:shadowRadius="8"
-        android:padding="20dp" />
 
-    <GridLayout
-        android:layout_width="fill_parent"
-        android:layout_height="487dp">
-
-
-        </GridLayout>
 
     <ImageView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/upgradesMenu"
         android:src="@drawable/upgrades_bar"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/exit_button"
+        android:layout_row="1"
+        android:layout_column="21"
+        android:src="@drawable/exit_button_shadow_7"
+        android:layout_marginRight="32dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp" />
 
 
 </RelativeLayout>
