@@ -2,6 +2,7 @@ package com.kevintyang.codeclicker.codeclicker;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.Fragment;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.drawable.AnimationDrawable;
@@ -22,6 +23,7 @@ public class MyActivity extends Activity {
     private ImageView mUpgradeButton;
     private ImageView mSellButton;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +41,7 @@ public class MyActivity extends Activity {
         Ticker tick = new Ticker();
         tick.start();
         //starts counting the code per second/money per second
+        
 
         //Get some variables
         mCodeButton = (ImageView)findViewById(R.id.keyboardButton);
@@ -182,12 +185,11 @@ public class MyActivity extends Activity {
         if (Build.VERSION.SDK_INT >= 19){
             if (keyCode == KeyEvent.KEYCODE_BACK){
                 finish();
-            } else if (keyCode == KeyEvent.KEYCODE_VOLUME_DOWN || keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
+            } else if (keyCode == Key   Event.KEYCODE_VOLUME_DOWN || keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
                 mHandler.postDelayed(resetImmersive, 450);
             }
         }
         return super.onKeyDown(keyCode, event);
     }
-
 
 }
