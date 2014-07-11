@@ -2,6 +2,7 @@ package com.kevintyang.codeclicker.codeclicker;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
@@ -45,8 +46,10 @@ public class MyActivity extends Activity {
         mUpgradeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                    Intent i= new Intent("");
+                    startActivity(i);
+                }
 
-            }
         });
 
         mCodeButton.setOnClickListener(new View.OnClickListener() {

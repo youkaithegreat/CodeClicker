@@ -17,6 +17,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SellScreen"
+            android:label="@string/app_name">
+            <intent-filter >
+                <action  android:name="in.wptrafficanalyzer.SellSCreen"/>
+                <category  android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".UpgradeScreen"
+            android:label="@string/app_name">
+            <intent-filter >
+                <action  android:name="in.wptrafficanalyzer.UpgradeScreen"/>
+                <category  android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
