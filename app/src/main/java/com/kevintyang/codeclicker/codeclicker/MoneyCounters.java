@@ -17,7 +17,7 @@ public class MoneyCounters {
     //synchronized to ensure that we don't get math errors
     public synchronized static void addMoneyPerSecondValue(){
 
-        currentMoneyCount = moneyPerSecond + currentMoneyCount;
+        currentMoneyCount = UpgradeObjects.totalMoneyProducerPPS() + currentMoneyCount;
     }
 
     public synchronized static long getCurrentMoneyCount(){
@@ -36,7 +36,7 @@ public class MoneyCounters {
         clickValue += newClickValue;
     }
 
-    public static void subtractCostOfUpgrades(int cost){
+    public static void subtractCostOfUpgrades(long cost){
 
         currentMoneyCount = currentMoneyCount - cost;
     }

@@ -15,7 +15,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:src="@drawable/money_output"
+        android:src="@drawable/money_output_clean"
         android:layout_marginTop="7dp" />
 
     <TextView
@@ -59,11 +59,19 @@
         android:layout_height="fill_parent">
 
         <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/upgrades_button"
+            android:src="@drawable/two_bills"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="7dp" />
+
+        <ImageView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/cupAndPenWithBar"
             android:src="@drawable/cup_and_pens_with_bar_with_wire"
-            android:layout_marginTop="175dp"
+            android:layout_marginTop="150dp"
             android:layout_below="@+id/cash_output"
             android:layout_centerHorizontal="true" />
 
@@ -78,7 +86,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="false"
         android:longClickable="true"
-        android:layout_marginBottom="135dp" />
+        android:layout_marginBottom="100dp" />
 
     <ImageView
         android:layout_width="fill_parent"

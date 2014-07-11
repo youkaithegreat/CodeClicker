@@ -8,11 +8,13 @@ public class CodeProducer {
 
         private String name = "Empty", description;
         private int qtyOfProducers = 0;
-        private int codeAmount = 0, currentValue = 0;
-        private int costToBuy = 0;
+        private double codeAmount = 0;
+        private long currentValue = 0;
+        private long costToBuy = 0;
         private double costMultiplier;
+        private long producerValue = 0;
 
-        public CodeProducer(String producerName, int codeAmt, String tag, int cost, int costMultiplier){
+        public CodeProducer(String producerName, double codeAmt, String tag, int cost, double costMultiplier){
             name = producerName;
             codeAmount = codeAmt;
             description = tag;
@@ -23,18 +25,19 @@ public class CodeProducer {
         public synchronized void addProducer(){
             if(MoneyCounters.getCurrentMoneyCount() >= costToBuy){
                 qtyOfProducers++;
-              MoneyCounters.subtractCostOfUpgrades(costToBuy);
+              MoneyCounters.subtractCostOfUpgrades((int)costToBuy);
                costToBuy = (int)(costToBuy * costMultiplier);
                 //display message
             }
         }
-        /*
-        public void subtractProducer(){
-            qtyOfProducers--;
-            costToBuy = (int)(costToBuy/costMultiplier);
-        }*/
-        //extra method we may not instatiate
 
+        public long getProducerValue(){
+
+            producerValue = (int)(qtyOfProducers * codeAmount);
+            //the way this is set up if codeAmount is like .1 it will probably truncate it/ cause some problems
+            return producerValue;
+
+        }
 
         //may have to turn this into a string
         public long  getCost(){

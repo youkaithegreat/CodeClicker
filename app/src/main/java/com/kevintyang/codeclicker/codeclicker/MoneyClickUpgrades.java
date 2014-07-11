@@ -9,10 +9,10 @@ public class MoneyClickUpgrades {
     private int cost;
     private int maxQty;
     private int qty = 0;
-    private int costMultiplier;
+    private double costMultiplier;
 
 
-    public MoneyClickUpgrades(String name, int clickAddAmount, int initCost, int maxQty, int costMultiplier){
+    public MoneyClickUpgrades(String name, int clickAddAmount, int initCost, int maxQty, double costMultiplier){
         description = name;
         clickAddAmount = clickAddAmount;
         cost = initCost;
@@ -29,10 +29,15 @@ public class MoneyClickUpgrades {
 
             //update upgrade view with new text
 
-            cost = cost * costMultiplier;
+            cost = (int)(cost * costMultiplier);
 
             //create a GUI message that says insufficient funds(?)
         }
+    }
+
+    public long getClickValue(){
+
+        return (long) (clickAddAmount *qty);
     }
 
 }
