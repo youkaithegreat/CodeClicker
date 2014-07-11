@@ -39,6 +39,7 @@ public class MyActivity extends Activity {
         Ticker tick = new Ticker();
         tick.start();
         //starts counting the code per second/money per second
+        
 
         //Get some variables
         mCodeButton = (ImageView)findViewById(R.id.keyboardButton);
