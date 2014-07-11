@@ -30,10 +30,9 @@ public class MyActivity extends Activity {
         this.setContentView(R.layout.activity_my);
 
 
-        //Sets screen orientation to Portrait. We are also changing orientation in the xml, I might move it to the manifest . . 
+        //Sets screen orientation to Portrait. We are also changing orientation in the xml, I might move it to the manifest . .
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        Log.d("Immersed", "onCreate is here!");
 
         //Get some variables
         mCodeButton = (ImageView)findViewById(R.id.keyboardButton);
