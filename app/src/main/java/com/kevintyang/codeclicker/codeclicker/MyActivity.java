@@ -13,8 +13,6 @@ public class MyActivity extends Activity {
 
     //private variables to avoid creating additional objects
     private ImageView mCodeButton;
-    private ImageView one = null;
-    private ImageView two = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +42,8 @@ public class MyActivity extends Activity {
         //starts counting the code per second/money per second
 
     }
+
+
 
     public void onPause(){
         super.onPause();

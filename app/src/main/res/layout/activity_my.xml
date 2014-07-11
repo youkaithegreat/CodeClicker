@@ -71,4 +71,14 @@
         android:longClickable="true"
         android:layout_marginBottom="70dp" />
 
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/menu_bar_top"
+        android:layout_below="@+id/cash_output"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/rectangle_top"
+        android:longClickable="true" />
+
 </RelativeLayout>
