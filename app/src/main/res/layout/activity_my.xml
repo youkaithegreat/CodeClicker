@@ -51,14 +51,21 @@
         android:layout_marginBottom="10dp"
         android:layout_marginRight="15dp" />
 
-    <ImageView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/cupAndPenWithBar"
-        android:src="@drawable/cup_and_pens_with_bar_with_wire"
-        android:layout_marginTop="125dp"
-        android:layout_below="@+id/cash_output"
-        android:layout_centerHorizontal="true" />
+        android:layout_height="fill_parent">
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cupAndPenWithBar"
+            android:src="@drawable/cup_and_pens_with_bar_with_wire"
+            android:layout_marginTop="175dp"
+            android:layout_below="@+id/cash_output"
+            android:layout_centerHorizontal="true" />
+
+    </LinearLayout>
 
     <ImageView
         android:layout_width="match_parent"
@@ -69,7 +76,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="false"
         android:longClickable="true"
-        android:layout_marginBottom="70dp" />
+        android:layout_marginBottom="135dp" />
 
     <ImageView
         android:layout_width="fill_parent"
