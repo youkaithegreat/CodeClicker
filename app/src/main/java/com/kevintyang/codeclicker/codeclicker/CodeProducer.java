@@ -7,7 +7,7 @@ public class CodeProducer {
 
 
         private String name = "Empty", description;
-        private int qtyOfProducers = 0;
+        private int qtyOfProducers = 1;
         private double codeAmount = 0;
         private long currentValue = 0;
         private long costToBuy = 0;

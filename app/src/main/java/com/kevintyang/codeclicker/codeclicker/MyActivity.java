@@ -23,7 +23,7 @@ public class MyActivity extends Activity {
     private ImageView mUpgradeButton;
     private ImageView mSellButton;
 
-
+    final static Handler handler = new Handler();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +41,9 @@ public class MyActivity extends Activity {
         Ticker tick = new Ticker();
         tick.start();
         //starts counting the code per second/money per second
-        
+
+
+        handler.postDelayed(runnable, 100);
 
         //Get some variables
         mCodeButton = (ImageView)findViewById(R.id.keyboardButton);
@@ -73,6 +75,14 @@ public class MyActivity extends Activity {
             this.setContentView(R.layout.screen_sell);
         }
     }
+
+    Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            updateCodeTextView();
+            handler.postDelayed(this, 100);
+        }
+    };
 
     private void sendMessage() {
         Intent intent = new Intent(MyActivity.this, UpgradeScreen.class);
