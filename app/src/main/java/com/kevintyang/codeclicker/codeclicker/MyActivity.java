@@ -48,8 +48,7 @@ public class MyActivity extends Activity {
         mUpgradeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    Intent i= new Intent("");
-                    startActivity(i);
+                    sendMessage();
                 }
 
         });
@@ -63,6 +62,11 @@ public class MyActivity extends Activity {
         });
 
 
+    }
+
+    private void sendMessage() {
+        Intent intent = new Intent(MyActivity.this, UpgradeScreen.class);
+        startActivity(intent);
     }
 
     @SuppressLint("NewApi")
@@ -175,7 +179,6 @@ public class MyActivity extends Activity {
         }
         return super.onKeyDown(keyCode, event);
     }
-
 
 
 }
