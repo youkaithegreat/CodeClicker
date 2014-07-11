@@ -185,7 +185,7 @@ public class MyActivity extends Activity {
         if (Build.VERSION.SDK_INT >= 19){
             if (keyCode == KeyEvent.KEYCODE_BACK){
                 finish();
-            } else if (keyCode == Key   Event.KEYCODE_VOLUME_DOWN || keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
+            } else if (keyCode == KeyEvent.KEYCODE_VOLUME_DOWN || keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
                 mHandler.postDelayed(resetImmersive, 450);
             }
         }
