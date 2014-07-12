@@ -26,35 +26,58 @@ public class UpgradeObjects {
 
     public static long totalCodeProducerPPS()
     {
-        codeBeingAdded = codeExample.getProducerValue();
+        totalCodePPS = codeExample.getProducerValue();
+        return totalCodePPS;
+    }
 
-        codeBeingSubtracted = moneyExample.codeBeingSold();
-        if(codeBeingAdded >= codeBeingSubtracted) {
-
-            enoughCode = true;
-            totalCodePPS = codeBeingAdded - codeBeingSubtracted;
+    public synchronized static boolean enoughCode(){
+        if(totalCodeProducerPPS() >= totalMoneyProducerPPS())
+        {
+            return true;
         }
         else
-        {
-            enoughCode = false;
-            totalCodePPS = 0;
-        }
-
-        return totalCodePPS;
+            return false;
     }
 
     //totalMoneyProducer must ALWAYS be run after totalCodeProducer
     public static long totalMoneyProducerPPS()
     {
-        if(enoughCode == true) {
-            totalMPPS = moneyExample.getProducerValue();
 
-        }
-        else
-        {
-            totalMPPS = codeBeingAdded;
-        }
+        totalMPPS = moneyExample.getProducerValue();
         return totalMPPS;
+    }
+
+    public synchronized static long actualizedCodePS(){
+        long totalCPS = totalCodeProducerPPS();
+        long totalMPS = totalMoneyProducerPPS();
+        long currentCodeCount = CodeCounters.getCurrentCodeCount();
+        long difference = totalCPS - totalMPS;
+        boolean enough = enoughCode();
+        if(enough){
+            return totalCPS - totalMPS;
+        }else if(!enough && currentCodeCount == 0){
+            return 0;
+        }else if(!enough && currentCodeCount > 0 && difference >= currentCodeCount){
+            return 0 - difference;
+        }else if(!enough && currentCodeCount > 0&& (difference < currentCodeCount))
+            return 0 - currentCodeCount ;
+        return 0;
+    }
+
+    public synchronized static long actualizedMoneyPS(){
+        long totalCPS = totalCodeProducerPPS();
+        long totalMPS = totalMoneyProducerPPS();
+        long currentCodeCount = CodeCounters.getCurrentCodeCount();
+        long difference = totalCPS - totalMPS;
+        boolean enough = enoughCode();
+        if(enough){
+            return totalMPS;
+        }else if(!enough && currentCodeCount == 0){
+            return totalCPS;
+        }else if(!enough && currentCodeCount > 0 && difference >= currentCodeCount){
+            return totalCPS + difference;
+        }
+        return 0;
     }
 
     public long totalCodeClickValue(){

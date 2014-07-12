@@ -20,7 +20,9 @@ public class CodeCounters {
 
     //synchronized, so that we don't get math errors.
     public synchronized static void addCodePerSecondValue(){
-        currentCodeCount = UpgradeObjects.totalCodeProducerPPS() + currentCodeCount;
+
+            currentCodeCount = UpgradeObjects.actualizedCodePS() + currentCodeCount;
+
     }
 
     public static long getCurrentCodeCount(){
