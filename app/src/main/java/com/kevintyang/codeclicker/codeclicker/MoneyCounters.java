@@ -9,9 +9,14 @@ public class MoneyCounters {
     private static long moneyPerSecond = 0;
     private static long currentMoneyCount = 0;
     private static long clickValue;
-    public static void codeClick(){
 
-        currentMoneyCount += clickValue;
+    public static void sellClick(){
+        if(CodeCounters.getCurrentCodeCount() >= clickValue) {
+            currentMoneyCount += clickValue;
+        }else
+        {
+            currentMoneyCount = currentMoneyCount;
+        }
     }
 
     //synchronized to ensure that we don't get math errors

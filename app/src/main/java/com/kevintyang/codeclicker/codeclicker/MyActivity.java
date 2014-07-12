@@ -19,6 +19,7 @@ public class MyActivity extends Activity {
     //private variables to avoid creating additional objects
     private ImageView mCodeButton;
     private ImageView mUpgradeButton;
+    private ImageView mSellButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,7 @@ public class MyActivity extends Activity {
         //Get some variables
         mCodeButton = (ImageView)findViewById(R.id.keyboardButton);
         mUpgradeButton = (ImageView)findViewById(R.id.upgrades_button);
+        mSellButton = (ImageView)findViewById(R.id.sellButton);
 
         mUpgradeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +58,8 @@ public class MyActivity extends Activity {
                 codeClick();
             }
         });
+
+
     }
 
     @SuppressLint("NewApi")
@@ -106,6 +110,9 @@ public class MyActivity extends Activity {
         updateCodeTextView();
     }
 
+    public void sellClick(){
+        MoneyCounters.sellClick();
+    }
     private void animateCodeButton() {
         mCodeButton.setImageResource(R.drawable.keyboard_click);
         AnimationDrawable buttonPress = (AnimationDrawable) mCodeButton.getDrawable();
