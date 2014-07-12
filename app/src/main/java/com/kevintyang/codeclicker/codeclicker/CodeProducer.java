@@ -14,7 +14,7 @@ public class CodeProducer {
         private double costMultiplier;
         private long producerValue = 0;
 
-        public CodeProducer(String producerName, double codeAmt, String tag, int cost, double costMultiplier){
+        public CodeProducer(String producerName, double codeAmt, String tag, long cost, double costMultiplier){
             name = producerName;
             codeAmount = codeAmt;
             description = tag;

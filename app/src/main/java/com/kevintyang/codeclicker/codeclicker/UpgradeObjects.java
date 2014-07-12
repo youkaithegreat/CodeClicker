@@ -17,7 +17,16 @@ public class UpgradeObjects {
     //C for Code M for Money
 
     static CodeProducer codeExample = new CodeProducer("ExampleName", 20, "Witty tag line/catch phrase should go here", 1000, 1.1 );
-    static CodeProducer codingBook = new CodeProducer("codingBook", .1, "",15, 1.1);
+    static CodeProducer codingBook = new CodeProducer("Coding Book", .1, "You bought a coding book to learn how to program!",15, 1.1);
+    static CodeProducer mom = new CodeProducer("Mom",1, "Your mom wants to help you code!", 343, 1.3);
+    static CodeProducer friend = new CodeProducer("Friend", 3, "You made your friend help you program!", 5000, 1.5);
+    static CodeProducer collegeUndergrad = new CodeProducer("College Undergrad", 12, "An undergrad staying up late with you to help!", 15000, 1.3);
+    static CodeProducer intern = new CodeProducer("Intern", 28, "An intern is producing software with you!", 100000, 1.4);
+    static CodeProducer compSciGrad = new CodeProducer("Computer Science Grad", 64, "A computer science graduate student is helping you code!", 800000, 1.6);
+    static CodeProducer softwareDeveloper = new CodeProducer("Software Developer", 320, "A software developer is developing programs for you!",123000000, 1.9);
+    static CodeProducer markZookerburg = new CodeProducer("Mark Zookerburg", 999, "Mark Zookerburg is designing awesome software with you!", 458000000,2.2);
+    static CodeProducer r3d3 = new CodeProducer("R3D3", 1600, "You created a robot to create code for you!", 784000000, 2.5);
+    static CodeProducer virus = new CodeProducer("virus", 2424, "You have designed a virus to produce tons of code!", 958000000, 3.0);
 
     static MoneyProducer moneyExample = new MoneyProducer("ExampleName", .50, "Witty producer tag line", 1000, 1.1);
     static MoneyProducer passingGo  = new MoneyProducer("monopolyMan",.1, "You just passed GO to make the money rain!",1100, 1.2);
@@ -30,7 +39,8 @@ public class UpgradeObjects {
     //add your code producer objects here 
     public static long totalCodeProducerPPS()
     {
-        totalCodePPS = codeExample.getProducerValue();
+        totalCodePPS = codeExample.getProducerValue() + mom.getProducerValue() + friend.getProducerValue() + collegeUndergrad.getProducerValue() + intern.getProducerValue()
+                + compSciGrad.getProducerValue() + softwareDeveloper.getProducerValue() + markZookerburg.getProducerValue() + r3d3.getProducerValue() + virus.getProducerValue();
         return totalCodePPS;
     }
 
