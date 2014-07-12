@@ -17,6 +17,7 @@ public class UpgradeObjects {
     //C for Code M for Money
 
     static CodeProducer codeExample = new CodeProducer("ExampleName", 20, "Witty tag line/catch phrase should go here", 1000, 1.1 );
+    static CodeProducer codingBook = new CodeProducer("codingBook", .1, "",15, 1.1);
 
     static MoneyProducer moneyExample = new MoneyProducer("ExampleName", .50, "Witty producer tag line", 1000, 1.1);
     static MoneyProducer passingGo  = new MoneyProducer("monopolyMan",.1, "You just passed GO to make the money rain!",1100, 1.2);
