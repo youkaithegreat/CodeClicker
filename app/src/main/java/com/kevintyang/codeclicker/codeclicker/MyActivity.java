@@ -3,12 +3,15 @@ package com.kevintyang.codeclicker.codeclicker;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Vibrator;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,6 +26,7 @@ public class MyActivity extends Activity {
     private ImageView mUpgradeButton;
     private ImageView mSellButton;
 
+    final static Ticker tick = new Ticker();
     final static Handler handler = new Handler();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +42,7 @@ public class MyActivity extends Activity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 
-        Ticker tick = new Ticker();
-        tick.start();
+       // tick.start();
         //starts counting the code per second/money per second
 
 
@@ -77,10 +80,22 @@ public class MyActivity extends Activity {
     }
 
     Runnable runnable = new Runnable() {
+
+        public int timeCheck = 0;
+
         @Override
         public void run() {
+
+            if(timeCheck >=990) {
+                CodeCounters.addCodePerSecondValue();
+                MoneyCounters.addMoneyPerSecondValue();
+                timeCheck = 0;
+            }
+            timeCheck = timeCheck + 100;
             updateCodeTextView();
             handler.postDelayed(this, 100);
+
+
         }
     };
 
@@ -93,6 +108,9 @@ public class MyActivity extends Activity {
     protected void onResume(){
         super.onResume();
 
+
+        handler.removeCallbacks(runnable);
+        handler.postDelayed(runnable, 200);
         // Check what version of android they are running.
         // If they are running Kit Kat . . .
         if (Build.VERSION.SDK_INT >= 19) {
@@ -111,10 +129,16 @@ public class MyActivity extends Activity {
     }
 
 
+    protected void onStop() {
+        super.onStop();
+        handler.removeCallbacks(runnable);
+
+    }
 
 
     public void onPause(){
         super.onPause();
+        handler.removeCallbacks(runnable);
 
     }
 
@@ -137,6 +161,8 @@ public class MyActivity extends Activity {
     public void codeClick(){
         CodeCounters.codeClick();
         updateCodeTextView();
+        Vibrator v = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
+        v.vibrate(30);
     }
 
     public void sellClick(){
@@ -157,6 +183,8 @@ public class MyActivity extends Activity {
         getMenuInflater().inflate(R.menu.my, menu);
         return true;
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
