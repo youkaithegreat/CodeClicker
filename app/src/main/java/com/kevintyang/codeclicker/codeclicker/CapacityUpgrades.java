@@ -5,7 +5,7 @@ package com.kevintyang.codeclicker.codeclicker;
  */
 public class CapacityUpgrades {
 
-    MoneyCapacity template = new MoneyCapacity();
+    MoneyCapacity piggyBank = new MoneyCapacity("Piggy Bank",1000,300);
 
     CodeCapacity floppyDisk = new CodeCapacity("Floppy Disk", 1000, 300);
 
