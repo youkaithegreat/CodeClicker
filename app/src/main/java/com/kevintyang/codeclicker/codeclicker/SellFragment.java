@@ -17,6 +17,6 @@ public class SellFragment extends Fragment {
 
 
 
-        return inflater.inflate(R.layout.screen_sell, container, false);
+        return inflater.inflate(R.layout.fragment_sell, container, false);
     }
 }

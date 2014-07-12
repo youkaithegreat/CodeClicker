@@ -3,7 +3,6 @@ package com.kevintyang.codeclicker.codeclicker;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Fragment;
-import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -12,6 +11,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Vibrator;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,6 +25,8 @@ public class MyActivity extends Activity {
     private ImageView mCodeButton;
     private ImageView mUpgradeButton;
     private ImageView mSellButton;
+    SectionsPagerAdapter mSectionsPagerAdapter;
+    ViewPager mViewPager;
 
     final static Ticker tick = new Ticker();
     final static Handler handler = new Handler();
@@ -35,8 +37,10 @@ public class MyActivity extends Activity {
         //Remove title bar. Eventually I need to the learn the 4.4 call to get Immersion Mode (no On Screen Navs
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        this.setContentView(R.layout.activity_my);
+        this.setContentView(R.layout.fragment_code);
 
+        //new shit
+        setContentView(R.layout.activity_my);
 
         //Sets screen orientation to Portrait. We are also changing orientation in the xml, I might move it to the manifest . .
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -45,13 +49,18 @@ public class MyActivity extends Activity {
        // tick.start();
         //starts counting the code per second/money per second
 
+        mSectionsPagerAdapter = new SectionsPagerAdapter(this, getFragmentManager());
+        mViewPager = (ViewPager) findViewById(R.id.pager);
+        mViewPager.setAdapter(mSectionsPagerAdapter);
+
 
         handler.postDelayed(runnable, 100);
 
-        //Get some variables
-        mCodeButton = (ImageView)findViewById(R.id.keyboardButton);
+       //Get some variables
+       /* mCodeButton = (ImageView)findViewById(R.id.keyboardButton);
         mUpgradeButton = (ImageView)findViewById(R.id.upgrades_button);
         mSellButton = (ImageView)findViewById(R.id.sellButton);
+
 
 
 
@@ -66,17 +75,16 @@ public class MyActivity extends Activity {
         mCodeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                animateCodeButton();
                 codeClick();
             }
         });
 
-        SwipeDetector swipeDetector = new SwipeDetector();
+        /*SwipeDetector swipeDetector = new SwipeDetector();
         mCodeButton.setOnTouchListener(swipeDetector);
 
         if (swipeDetector.getAction() == SwipeDetector.Action.LR) {
-            this.setContentView(R.layout.screen_sell);
-        }
+            this.setContentView(R.layout.fragment_sell);
+        }*/
     }
 
     Runnable runnable = new Runnable() {
@@ -98,6 +106,60 @@ public class MyActivity extends Activity {
 
         }
     };
+    //ViewPagerStuff
+    /* @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.my, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    } */
+
+
+    /**
+     * A placeholder fragment containing a simple view.
+     */
+    public static class PlaceholderFragment extends Fragment {
+        /**
+         * The fragment argument representing the section number for this
+         * fragment.
+         */
+        private static final String ARG_SECTION_NUMBER = "section_number";
+
+        /**
+         * Returns a new instance of this fragment for the given section
+         * number.
+         */
+        public static PlaceholderFragment newInstance(int sectionNumber) {
+            PlaceholderFragment fragment = new PlaceholderFragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        public PlaceholderFragment() {
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_my, container, false);
+            return rootView;
+        }
+    }
+
+    //end viewpager stuff
 
     private void sendMessage() {
         Intent intent = new Intent(MyActivity.this, UpgradeScreen.class);
@@ -159,6 +221,7 @@ public class MyActivity extends Activity {
     }
 
     public void codeClick(){
+        /*animateCodeButton();*/
         CodeCounters.codeClick();
         updateCodeTextView();
         Vibrator v = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);

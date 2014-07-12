@@ -1,8 +1,5 @@
 package com.kevintyang.codeclicker.codeclicker;
 
-        import java.text.SimpleDateFormat;
-        import java.util.Date;
-
         import android.app.Activity;
         import android.os.Bundle;
         import android.os.Handler;
@@ -13,7 +10,7 @@ public class TextViewUpdater extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my);
+        setContentView(R.layout.fragment_code);
 
         updateTextView();
 
