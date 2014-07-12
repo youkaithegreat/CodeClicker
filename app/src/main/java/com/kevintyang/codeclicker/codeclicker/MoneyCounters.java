@@ -17,7 +17,7 @@ public class MoneyCounters {
     //synchronized to ensure that we don't get math errors
     public synchronized static void addMoneyPerSecondValue(){
 
-        currentMoneyCount = moneyPerSecond + currentMoneyCount;
+        currentMoneyCount = UpgradeObjects.totalMoneyProducerPPS() + currentMoneyCount;
     }
 
     public synchronized static long getCurrentMoneyCount(){

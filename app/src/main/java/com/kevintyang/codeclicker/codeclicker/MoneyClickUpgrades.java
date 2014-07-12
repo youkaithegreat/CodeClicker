@@ -35,4 +35,9 @@ public class MoneyClickUpgrades {
         }
     }
 
+    public long getClickValue(){
+
+        return (long) (clickAddAmount *qty);
+    }
+
 }

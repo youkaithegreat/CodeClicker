@@ -12,6 +12,7 @@ public class CodeProducer {
         private long currentValue = 0;
         private long costToBuy = 0;
         private double costMultiplier;
+        private long producerValue = 0;
 
         public CodeProducer(String producerName, double codeAmt, String tag, int cost, double costMultiplier){
             name = producerName;
@@ -29,13 +30,14 @@ public class CodeProducer {
                 //display message
             }
         }
-        /*
-        public void subtractProducer(){
-            qtyOfProducers--;
-            costToBuy = (int)(costToBuy/costMultiplier);
-        }*/
-        //extra method we may not instatiate
 
+        public long getProducerValue(){
+
+            producerValue = (int)(qtyOfProducers * codeAmount);
+            //the way this is set up if codeAmount is like .1 it will probably truncate it/ cause some problems
+            return producerValue;
+
+        }
 
         //may have to turn this into a string
         public long  getCost(){
