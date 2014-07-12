@@ -19,10 +19,17 @@ public class UpgradeObjects {
     static CodeProducer codeExample = new CodeProducer("ExampleName", 20, "Witty tag line/catch phrase should go here", 1000, 1.1 );
 
     static MoneyProducer moneyExample = new MoneyProducer("ExampleName", .50, "Witty producer tag line", 1000, 1.1);
-    static MoneyProducer passingGo  = new MoneyProducer("monopolyMan",.1, "You just passed GO to make the money rain!",1100, 1.2);
-    static MoneyProducer nerdDownTown  = new MoneyProducer("nerdDownTown",.25, "A nerd just hacked Taco Bell to get you money!",500, .5);
-    static MoneyProducer monopolyMan = new MoneyProducer("monopolyMan",.1, "You just passed go to make the money rain!",1100, 1.2);
-    static CodeClickUpgrades codeClickExample = new CodeClickUpgrades("WittyName", 1, 10000, 2, 1.5);
+    static MoneyProducer dropout  = new MoneyProducer("Dropout",1, "You just passed GO to make the money rain!",22, .5);
+    static MoneyProducer hackerBeast = new MoneyProducer("Hacker Beast",3, "Hacker Beast just hacked mcJondalds to get you money",550, 1.0);
+    static MoneyProducer collegeNerd = new MoneyProducer("College Nerd",5, "College Nerd got lazy and decided to buy your code",6242, 1.2);
+    static MoneyProducer loogleEmployee = new MoneyProducer("Loogle Employee",13, "you made a back alley deal with an loogle employee",33531, 1.5);
+    static MoneyProducer ceoOfMyFace = new MoneyProducer("Ceo Of MyFace ",29, "MyFace's CEO couldn't make his own code and brought yours ",253525, 1.7);
+    static MoneyProducer startupMyFace = new MoneyProducer("Start up MyFace",66, "MyFace need your code you just made bank",943550, 1.825);
+    static MoneyProducer loogle = new MoneyProducer("Loogle",420, " Loogle just hired you to take over their coding division, you are now a Coding Master!!!  ",790000000, 2.5);
+    static MoneyProducer c4P0 = new MoneyProducer("C4P0",1000, "College Nerd got lazy and decided to buy your code",43200000, 1.621);
+    static MoneyProducer superSecretAgency = new MoneyProducer("Super Secret Agency",1675, "You were snatched and taken away trust me you made a lot of money for people you will never know ",7000000, 3);
+    static MoneyProducer billBanks = new MoneyProducer("Bill Banks",5, "Bill Banks said he got nothing on you, you are now the Best!! ",1002003215, 3.5);
+    static CodeClickUpgrades codeClickExample = new CodeClickUpgrades("WittyName", 1, 10000, 2, 3.6);
 
     static MoneyClickUpgrades moneyClickExample = new MoneyClickUpgrades("AwesomeName", 1, 1000000, 2, 1.5);
 
@@ -47,7 +54,8 @@ public class UpgradeObjects {
     public static long totalMoneyProducerPPS()
     {
 
-        totalMPPS = moneyExample.getProducerValue();
+        totalMPPS = moneyExample.getProducerValue() + dropout.getProducerValue() + hackerBeast.getProducerValue()
+                + collegeNerd.getProducerValue() + loogleEmployee.getProducerValue() + ceoOfMyFace.getProducerValue() + startupMyFace.getProducerValue() + loogle.getProducerValue() + c4P0.getProducerValue() + superSecretAgency.getProducerValue() + billBanks.getProducerValue();
         return totalMPPS;
     }
 
