@@ -11,6 +11,7 @@ import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.PowerManager;
 import android.os.Vibrator;
 import android.util.Log;
 import android.view.Menu;
@@ -77,6 +78,7 @@ public class MyActivity extends Activity {
         if (swipeDetector.getAction() == SwipeDetector.Action.LR) {
             this.setContentView(R.layout.screen_sell);
         }
+
     }
 
     Runnable runnable = new Runnable() {

@@ -39,6 +39,7 @@ public class UpgradeObjects {
     static MoneyProducer c4P0 = new MoneyProducer("C4P0",1000, "College Nerd got lazy and decided to buy your code",43200000, 1.621);
     static MoneyProducer superSecretAgency = new MoneyProducer("Super Secret Agency",1675, "You were snatched and taken away trust me you made a lot of money for people you will never know ",7000000, 3);
     static MoneyProducer billBanks = new MoneyProducer("Bill Banks",5, "Bill Banks said he got nothing on you, you are now the Best!! ",1002003215, 3.5);
+
     static CodeClickUpgrades codeClickExample = new CodeClickUpgrades("WittyName", 1, 10000, 2, 3.6);
 
     static MoneyClickUpgrades moneyClickExample = new MoneyClickUpgrades("AwesomeName", 1, 1000000, 2, 1.5);
