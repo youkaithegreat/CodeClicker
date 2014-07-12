@@ -13,15 +13,26 @@ public class CodeCounters {
 
     private static long clickValue = 1;
 
-    public static void codeClick(){
+    private static long capacity = 500;
 
-        currentCodeCount += clickValue;
+    public static void codeClick(){
+        if(capacity> currentCodeCount) {
+            currentCodeCount += clickValue;
+        }else
+        {
+            currentCodeCount = capacity;
+        }
     }
 
     //synchronized, so that we don't get math errors.
     public synchronized static void addCodePerSecondValue(){
 
-            currentCodeCount = UpgradeObjects.actualizedCodePS() + currentCodeCount;
+            if(currentCodeCount >= capacity){
+                currentCodeCount = capacity;
+            }else if(currentCodeCount + UpgradeObjects.actualizedCodePS() <= capacity) {
+                currentCodeCount = UpgradeObjects.actualizedCodePS() + currentCodeCount;
+            }else
+                currentCodeCount = capacity;
 
     }
 
@@ -41,6 +52,12 @@ public class CodeCounters {
 
     }
 
+    public static void changeCapacity(long newCapacity){
+        capacity = newCapacity;
+    }
 
+    public String getCapacity(){
+        return " / "+capacity;
+    }
 
 }

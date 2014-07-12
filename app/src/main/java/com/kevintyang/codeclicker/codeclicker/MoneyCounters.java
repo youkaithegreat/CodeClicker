@@ -9,20 +9,32 @@ public class MoneyCounters {
     private static long moneyPerSecond = 0;
     private static long currentMoneyCount = 0;
     private static long clickValue;
+    private static long capacity = 500;
 
     public static void sellClick(){
-        if(CodeCounters.getCurrentCodeCount() >= clickValue) {
-            currentMoneyCount += clickValue;
+        if(capacity > currentMoneyCount) {
+            if (CodeCounters.getCurrentCodeCount() >= clickValue) {
+                currentMoneyCount += clickValue;
+            } else {
+                currentMoneyCount = currentMoneyCount;
+            }
         }else
         {
-            currentMoneyCount = currentMoneyCount;
+            currentMoneyCount = capacity;
         }
     }
 
     //synchronized to ensure that we don't get math errors
     public synchronized static void addMoneyPerSecondValue(){
 
-        currentMoneyCount = UpgradeObjects.actualizedMoneyPS() + currentMoneyCount;
+        if(currentMoneyCount >= capacity) {
+            currentMoneyCount = capacity;
+
+        } else if (UpgradeObjects.actualizedMoneyPS() +  currentMoneyCount <= capacity) {
+            currentMoneyCount = UpgradeObjects.actualizedMoneyPS() + currentMoneyCount;
+        }else
+            currentMoneyCount = capacity;
+
     }
 
     public synchronized static long getCurrentMoneyCount(){
@@ -46,5 +58,8 @@ public class MoneyCounters {
         currentMoneyCount = currentMoneyCount - cost;
     }
 
+    public String getCapacity(){
+        return " / "+capacity;
+    }
 
 }

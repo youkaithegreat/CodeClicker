@@ -7,6 +7,6 @@ public class CapacityUpgrades {
 
     moneyCapacity template = new moneyCapacity();
 
-    codeCapacity template = new codeCapacity(); 
+    codeCapacity template = new codeCapacity();
 
 }

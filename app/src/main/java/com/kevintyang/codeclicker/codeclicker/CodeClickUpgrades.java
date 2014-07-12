@@ -36,6 +36,7 @@ public class CodeClickUpgrades {
         }
     }
 
+
     public long getClickValue(){
 
         return (long) (clickAddAmount *qty);
