@@ -5,6 +5,11 @@
     android:background="@color/background_blue"
     tools:context=".MyActivity">
 
+    <fragment android:name="com.kevintyang.codeclicker.codeclicker.SellFragment"
+        android:id="@+id/viewer"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent" />
 
     <ImageView
         android:layout_width="fill_parent"

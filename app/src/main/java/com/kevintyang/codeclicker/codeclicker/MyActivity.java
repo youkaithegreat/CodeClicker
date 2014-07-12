@@ -45,6 +45,8 @@ public class MyActivity extends Activity {
         mUpgradeButton = (ImageView)findViewById(R.id.upgrades_button);
         mSellButton = (ImageView)findViewById(R.id.sellButton);
 
+
+
         mUpgradeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +63,12 @@ public class MyActivity extends Activity {
             }
         });
 
+        SwipeDetector swipeDetector = new SwipeDetector();
+        mCodeButton.setOnTouchListener(swipeDetector);
 
+        if (swipeDetector.getAction() == SwipeDetector.Action.LR) {
+            this.setContentView(R.layout.screen_sell);
+        }
     }
 
     private void sendMessage() {
@@ -89,6 +96,8 @@ public class MyActivity extends Activity {
 
         Log.d("Immersive Mode Activity", "onResume Called!");
     }
+
+
 
 
     public void onPause(){
