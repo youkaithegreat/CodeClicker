@@ -18,7 +18,7 @@ public class TextViewUpdater extends Activity {
         updateTextView();
 
         handler.removeCallbacks(updateTextViewTask);
-        handler.postDelayed(updateTextViewTask, 100);
+        handler.postDelayed(updateTextViewTask, 1000);
     }
 
     private Runnable updateTextViewTask = new Runnable() {

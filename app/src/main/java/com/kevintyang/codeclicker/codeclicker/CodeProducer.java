@@ -7,14 +7,14 @@ public class CodeProducer {
 
 
         private String name = "Empty", description;
-        private int qtyOfProducers = 1;
+        private int qtyOfProducers = 0;
         private double codeAmount = 0;
         private long currentValue = 0;
         private long costToBuy = 0;
         private double costMultiplier;
         private long producerValue = 0;
 
-        public CodeProducer(String producerName, double codeAmt, String tag, int cost, double costMultiplier){
+        public CodeProducer(String producerName, double codeAmt, String tag, long cost, double costMultiplier){
             name = producerName;
             codeAmount = codeAmt;
             description = tag;
