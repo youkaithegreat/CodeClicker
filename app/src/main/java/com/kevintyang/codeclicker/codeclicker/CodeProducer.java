@@ -8,11 +8,12 @@ public class CodeProducer {
 
         private String name = "Empty", description;
         private int qtyOfProducers = 0;
-        private int codeAmount = 0, currentValue = 0;
-        private int costToBuy = 0;
+        private double codeAmount = 0;
+        private long currentValue = 0;
+        private long costToBuy = 0;
         private double costMultiplier;
 
-        public CodeProducer(String producerName, int codeAmt, String tag, int cost, int costMultiplier){
+        public CodeProducer(String producerName, double codeAmt, String tag, int cost, double costMultiplier){
             name = producerName;
             codeAmount = codeAmt;
             description = tag;
@@ -23,7 +24,7 @@ public class CodeProducer {
         public synchronized void addProducer(){
             if(MoneyCounters.getCurrentMoneyCount() >= costToBuy){
                 qtyOfProducers++;
-              MoneyCounters.subtractCostOfUpgrades(costToBuy);
+              MoneyCounters.subtractCostOfUpgrades((int)costToBuy);
                costToBuy = (int)(costToBuy * costMultiplier);
                 //display message
             }

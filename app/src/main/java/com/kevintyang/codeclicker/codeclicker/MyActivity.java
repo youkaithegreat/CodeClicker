@@ -23,7 +23,6 @@ public class MyActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         //Remove title bar. Eventually I need to the learn the 4.4 call to get Immersion Mode (no On Screen Navs
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -35,6 +34,10 @@ public class MyActivity extends Activity {
 
         Log.d("Immersed", "onCreate is here!");
 
+        Ticker tick = new Ticker();
+        tick.start();
+        //starts counting the code per second/money per second
+
         //Get some variables
         mCodeButton = (ImageView)findViewById(R.id.keyboardButton);
 
@@ -45,12 +48,6 @@ public class MyActivity extends Activity {
                 codeClick();
             }
         });
-
-
-        Ticker tick = new Ticker();
-        tick.start();
-        //starts counting the code per second/money per second
-
     }
 
     @SuppressLint("NewApi")
