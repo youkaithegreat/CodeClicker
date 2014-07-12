@@ -24,12 +24,14 @@ public class UpgradeObjects {
 
     static MoneyClickUpgrades moneyClickExample = new MoneyClickUpgrades("AwesomeName", 1, 1000000, 2, 1.5);
 
+    //add your code producer objects here 
     public static long totalCodeProducerPPS()
     {
         totalCodePPS = codeExample.getProducerValue();
         return totalCodePPS;
     }
 
+    //DON"T TOUCH THIS
     public synchronized static boolean enoughCode(){
         if(totalCodeProducerPPS() >= totalMoneyProducerPPS())
         {
@@ -39,7 +41,7 @@ public class UpgradeObjects {
             return false;
     }
 
-    //totalMoneyProducer must ALWAYS be run after totalCodeProducer
+    //add OBJECTS when created.
     public static long totalMoneyProducerPPS()
     {
 
@@ -47,6 +49,7 @@ public class UpgradeObjects {
         return totalMPPS;
     }
 
+    //DONT TOUCH THIS.
     public synchronized static long actualizedCodePS(){
         long totalCPS = totalCodeProducerPPS();
         long totalMPS = totalMoneyProducerPPS();
@@ -64,6 +67,7 @@ public class UpgradeObjects {
         return 0;
     }
 
+    //DONT TOUCH THIS
     public synchronized static long actualizedMoneyPS(){
         long totalCPS = totalCodeProducerPPS();
         long totalMPS = totalMoneyProducerPPS();
