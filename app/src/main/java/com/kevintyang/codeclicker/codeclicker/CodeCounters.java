@@ -43,7 +43,7 @@ public class CodeCounters {
 
     public static String getCurrentStr(){
 
-        return "//" + currentCodeCount;
+        return "//" + currentCodeCount + " / " + capacity;
     }
 
     public static void increaseClickValue(int newClickValue){

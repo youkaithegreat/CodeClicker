@@ -7,6 +7,7 @@ public class CapacityUpgrades {
 
     MoneyCapacity template = new MoneyCapacity();
 
-    codeCapacity template = new codeCapacity();
+    CodeCapacity floppyDisk = new CodeCapacity("Floppy Disk", 1000, 300);
+
 
 }
