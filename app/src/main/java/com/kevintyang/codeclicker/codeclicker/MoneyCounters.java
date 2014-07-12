@@ -43,9 +43,13 @@ public class MoneyCounters {
 
     }
 
+    public static void changeCapacity(long newCapacity){
+        capacity = newCapacity;
+    }
+
     public static String getCurrentStr(){
 
-        return "$" + currentMoneyCount;
+        return "$" + currentMoneyCount ;
     }
 
     public static void increaseClickValue(int newClickValue){
