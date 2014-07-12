@@ -18,6 +18,7 @@ public class MyActivity extends Activity {
 
     //private variables to avoid creating additional objects
     private ImageView mCodeButton;
+    private ImageView mUpgradeButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,14 @@ public class MyActivity extends Activity {
 
         //Get some variables
         mCodeButton = (ImageView)findViewById(R.id.keyboardButton);
+        mUpgradeButton = (ImageView)findViewById(R.id.upgrades_button);
+
+        mUpgradeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
         mCodeButton.setOnClickListener(new View.OnClickListener() {
             @Override
