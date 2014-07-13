@@ -218,7 +218,7 @@ public class MyActivity extends Activity {
     }
 
     public void codeClick(View v){
-        /*animateCodeButton();*/
+        animateCodeButton();
         CodeCounters.codeClick();
         updateCodeTextView();
         Vibrator z = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
