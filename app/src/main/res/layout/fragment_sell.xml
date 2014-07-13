@@ -3,13 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_blue"
-    tools:context=".MyActivity">
+    tools:context="com.kevintyang.codeclicker.codeclicker.SellScreen">
 
-    <fragment android:name="com.kevintyang.codeclicker.codeclicker.SellFragment"
-        android:id="@+id/viewer"
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:layout_height="match_parent" />
 
     <ImageView
         android:layout_width="fill_parent"
@@ -26,7 +21,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="0"
-        android:id="@+id/cashTextView"
+        android:id="@+id/cashTextViewSellScreen"
         android:layout_marginTop="18dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
@@ -42,7 +37,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="false"
         android:longClickable="true"
-        android:layout_marginBottom="80dp" />
+        android:layout_marginBottom="80dp"
+        android:onClick="sellClick"/>
 
     <ImageView
         android:layout_width="fill_parent"
@@ -60,7 +56,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="0"
-        android:id="@+id/codeTextView"
+        android:id="@+id/codeTextViewSellScreen"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"

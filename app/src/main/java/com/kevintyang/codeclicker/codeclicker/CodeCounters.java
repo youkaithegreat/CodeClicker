@@ -24,6 +24,9 @@ public class CodeCounters {
         }
     }
 
+    public static void codeSell(long clickValue){
+        currentCodeCount = currentCodeCount - clickValue;
+    }
     //synchronized, so that we don't get math errors.
     public synchronized static void addCodePerSecondValue(){
 

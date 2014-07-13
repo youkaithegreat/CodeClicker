@@ -26,7 +26,7 @@ public class UpgradeScreen extends Activity{
         //Remove title bar. Eventually I need to the learn the 4.4 call to get Immersion Mode (no On Screen Navs
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        this.setContentView(R.layout.activity_my);
+        this.setContentView(R.layout.fragment_code);
 
 
         //Sets screen orientation to Portrait. We are also changing orientation in the xml, I might move it to the manifest . .

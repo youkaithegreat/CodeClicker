@@ -8,6 +8,7 @@ public class MoneyCounters {
     private static long moneyMultiplier = 1;
     private static long moneyPerSecond = 0;
     private static long currentMoneyCount = 0;
+<<<<<<< HEAD
     private static long clickValue;
     private static long capacity = 500;
 
@@ -18,6 +19,14 @@ public class MoneyCounters {
             } else {
                 currentMoneyCount = currentMoneyCount;
             }
+=======
+    private static long clickValue = 1;
+
+    public static void sellClick(){
+        if(CodeCounters.getCurrentCodeCount() >= clickValue) {
+            currentMoneyCount += clickValue;
+            CodeCounters.codeSell(clickValue);
+>>>>>>> origin/Fragments
         }else
         {
             currentMoneyCount = capacity;
