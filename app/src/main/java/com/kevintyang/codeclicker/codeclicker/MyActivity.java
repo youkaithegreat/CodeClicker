@@ -57,36 +57,6 @@ public class MyActivity extends Activity {
 
         handler.postDelayed(runnable, 300);
 
-       //Get some variables
-       /*
-        mUpgradeButton = (ImageView)findViewById(R.id.upgrades_button);
-        mSellButton = (ImageView)findViewById(R.id.sellButton);
-
-
-
-
-        mUpgradeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                    sendMessage();
-                }
-
-        });
-
-
-
-        /*SwipeDetector swipeDetector = new SwipeDetector();
-        mCodeButton.setOnTouchListener(swipeDetector);
-
-        if (swipeDetector.getAction() == SwipeDetector.Action.LR) {
-<<<<<<< HEAD
-            this.setContentView(R.layout.screen_sell);
-        }
-
-=======
-            this.setContentView(R.layout.fragment_sell);
-        }*/
->>>>>>> origin/Fragments
     }
 
     Runnable runnable = new Runnable() {
@@ -166,7 +136,7 @@ public class MyActivity extends Activity {
 
     //end viewpager stuff
 
-    private void sendMessage() {
+    private void sendMessage(View v) {
         Intent intent = new Intent(MyActivity.this, UpgradeScreen.class);
         startActivity(intent);
     }
@@ -209,22 +179,12 @@ public class MyActivity extends Activity {
 
     }
 
-    public void updateMoneyTextView() {
-
-        TextView textView = (TextView) findViewById(R.id.cashTextView);
-        textView.setText(MoneyCounters.getCurrentStr());
-
-        return;
-    }
-
     public void updateCodeTextView() {
-
         TextView textView = (TextView) findViewById(R.id.codeTextView);
         textView.setText(CodeCounters.getCurrentStr());
 
         TextView codeTextView =(TextView) findViewById(R.id.codeTextViewSellScreen);
         codeTextView.setText(CodeCounters.getCurrentStr());
-        return;
     }
 
     public void updateSellTextView(){
@@ -232,9 +192,7 @@ public class MyActivity extends Activity {
         textView.setText(MoneyCounters.getCurrentStr());
 
         TextView sellTextview = (TextView) findViewById(R.id.cashTextViewSellScreen);
-        textView.setText(MoneyCounters.getCurrentStr());
         sellTextview.setText(MoneyCounters.getCurrentStr());
-
     }
 
 

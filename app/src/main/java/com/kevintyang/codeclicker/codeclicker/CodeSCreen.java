@@ -20,18 +20,6 @@ public class CodeScreen extends Fragment {
 
     private ImageView mCodeButton;
 
-
-
-    private void animateCodeButton() {
-        mCodeButton.setImageResource(R.drawable.keyboard_click);
-        AnimationDrawable buttonPress = (AnimationDrawable) mCodeButton.getDrawable();
-        if(buttonPress.isRunning()) {
-            buttonPress.stop();
-        }
-        buttonPress.start();
-    }
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){

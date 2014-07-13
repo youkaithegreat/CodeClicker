@@ -1,14 +1,14 @@
 package com.kevintyang.codeclicker.codeclicker;
 
 /**
- * Created by Sharon on 7/11/2014.
+ * Created by Kevin on 7/13/2014.
  */
-public class CodeCapacity {
+public class MoneyCapacity {
     private String description;
     private long newCapacity;
     private long cost;
 
-    public CodeCapacity (String description, long newCapacity, long cost){
+    public MoneyCapacity (String description, long newCapacity, long cost){
         description = description;
         newCapacity = newCapacity;
         cost = cost;
