@@ -20,26 +20,8 @@ public class CodeScreen extends Fragment {
 
     private ImageView mCodeButton;
 
-    public void onClick(View v) {
 
-        mCodeButton = (ImageView)getView().findViewById(R.id.keyboardButton);
 
-        mCodeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                animateCodeButton();
-            }
-        });
-
-    }
-
-    public void codeClick(){
-        /*animateCodeButton();*/
-        CodeCounters.codeClick();
-
-        //Vibrator v = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
-       // v.vibrate(30);
-    }
     private void animateCodeButton() {
         mCodeButton.setImageResource(R.drawable.keyboard_click);
         AnimationDrawable buttonPress = (AnimationDrawable) mCodeButton.getDrawable();

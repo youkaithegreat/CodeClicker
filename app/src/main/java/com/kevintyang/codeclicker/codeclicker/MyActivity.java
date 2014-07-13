@@ -28,7 +28,7 @@ public class MyActivity extends Activity {
     SectionsPagerAdapter mSectionsPagerAdapter;
     ViewPager mViewPager;
 
-    final static Ticker tick = new Ticker();
+
     final static Handler handler = new Handler();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,10 +54,10 @@ public class MyActivity extends Activity {
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
 
-        handler.postDelayed(runnable, 100);
+        handler.postDelayed(runnable, 300);
 
        //Get some variables
-       /* mCodeButton = (ImageView)findViewById(R.id.keyboardButton);
+       /*
         mUpgradeButton = (ImageView)findViewById(R.id.upgrades_button);
         mSellButton = (ImageView)findViewById(R.id.sellButton);
 
@@ -72,12 +72,7 @@ public class MyActivity extends Activity {
 
         });
 
-        mCodeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                codeClick();
-            }
-        });
+
 
         /*SwipeDetector swipeDetector = new SwipeDetector();
         mCodeButton.setOnTouchListener(swipeDetector);
@@ -99,13 +94,15 @@ public class MyActivity extends Activity {
                 MoneyCounters.addMoneyPerSecondValue();
                 timeCheck = 0;
             }
-            timeCheck = timeCheck + 100;
+            timeCheck = timeCheck + 300;
             updateCodeTextView();
-            handler.postDelayed(this, 100);
+            handler.postDelayed(this, 300);
 
 
         }
     };
+
+
     //ViewPagerStuff
     /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -172,7 +169,7 @@ public class MyActivity extends Activity {
 
 
         handler.removeCallbacks(runnable);
-        handler.postDelayed(runnable, 200);
+        handler.postDelayed(runnable, 300);
         // Check what version of android they are running.
         // If they are running Kit Kat . . .
         if (Build.VERSION.SDK_INT >= 19) {
@@ -220,13 +217,14 @@ public class MyActivity extends Activity {
         return;
     }
 
-    public void codeClick(){
+    public void codeClick(View v){
         /*animateCodeButton();*/
         CodeCounters.codeClick();
         updateCodeTextView();
-        Vibrator v = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
-        v.vibrate(30);
+        Vibrator z = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
+        z.vibrate(30);
     }
+
 
     public void sellClick(){
         MoneyCounters.sellClick();
