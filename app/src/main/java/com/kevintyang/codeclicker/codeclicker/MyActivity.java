@@ -96,6 +96,7 @@ public class MyActivity extends Activity {
             }
             timeCheck = timeCheck + 300;
             updateCodeTextView();
+            updateSellTextView();
             handler.postDelayed(this, 300);
 
 
@@ -214,11 +215,24 @@ public class MyActivity extends Activity {
         TextView textView = (TextView) findViewById(R.id.codeTextView);
         textView.setText(CodeCounters.getCurrentStr());
 
+        TextView codeTextView =(TextView) findViewById(R.id.codeTextViewSellScreen);
+        codeTextView.setText(CodeCounters.getCurrentStr());
         return;
     }
 
+    public void updateSellTextView(){
+        TextView textView = (TextView) findViewById(R.id.cashTextView);
+        textView.setText(MoneyCounters.getCurrentStr());
+
+        TextView sellTextview = (TextView) findViewById(R.id.cashTextViewSellScreen);
+        textView.setText(MoneyCounters.getCurrentStr());
+        sellTextview.setText(MoneyCounters.getCurrentStr());
+
+    }
+
+
     public void codeClick(View v){
-        animateCodeButton();
+        //animateCodeButton();
         CodeCounters.codeClick();
         updateCodeTextView();
         Vibrator z = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
@@ -226,9 +240,16 @@ public class MyActivity extends Activity {
     }
 
 
-    public void sellClick(){
+    public void sellClick(View v){
+
         MoneyCounters.sellClick();
+        updateSellTextView();
+        Vibrator g = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
+        g.vibrate(30);
     }
+
+
+
     private void animateCodeButton() {
         mCodeButton.setImageResource(R.drawable.keyboard_click);
         AnimationDrawable buttonPress = (AnimationDrawable) mCodeButton.getDrawable();

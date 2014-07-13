@@ -8,11 +8,12 @@ public class MoneyCounters {
     private static long moneyMultiplier = 1;
     private static long moneyPerSecond = 0;
     private static long currentMoneyCount = 0;
-    private static long clickValue;
+    private static long clickValue = 1;
 
     public static void sellClick(){
         if(CodeCounters.getCurrentCodeCount() >= clickValue) {
             currentMoneyCount += clickValue;
+            CodeCounters.codeSell(clickValue);
         }else
         {
             currentMoneyCount = currentMoneyCount;
