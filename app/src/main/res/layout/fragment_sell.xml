@@ -34,12 +34,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/sellButton"
-        android:src="@drawable/briefcase_flat"
+        android:src="@drawable/briefcase_shadow_7"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="false"
         android:longClickable="true"
         android:onClick="sellClick"
-        android:layout_marginTop="300dp" />
+        android:layout_marginTop="305dp" />
 
 
     <ImageView
