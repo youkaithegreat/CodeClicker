@@ -101,20 +101,12 @@ public class MyActivity extends Activity {
     } */
 
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
+  /* Placeholder containing a simple view
     public static class PlaceholderFragment extends Fragment {
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
+        // fragment representing placeholder
         private static final String ARG_SECTION_NUMBER = "section_number";
 
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
+       // returns new instance of this fragment
         public static PlaceholderFragment newInstance(int sectionNumber) {
             PlaceholderFragment fragment = new PlaceholderFragment();
             Bundle args = new Bundle();
@@ -132,7 +124,7 @@ public class MyActivity extends Activity {
             View rootView = inflater.inflate(R.layout.fragment_my, container, false);
             return rootView;
         }
-    }
+    }*/
 
     //end viewpager stuff
 
@@ -197,7 +189,7 @@ public class MyActivity extends Activity {
 
 
     public void codeClick(View v){
-        //animateCodeButton();
+        animateCodeButton();
         CodeCounters.codeClick();
         updateCodeTextView();
         Vibrator z = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
@@ -206,7 +198,7 @@ public class MyActivity extends Activity {
 
 
     public void sellClick(View v){
-
+        animateSellButton();
         MoneyCounters.sellClick();
         updateSellTextView();
         Vibrator g = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
@@ -215,9 +207,20 @@ public class MyActivity extends Activity {
 
 
 
-    private void animateCodeButton() {
+    public void animateCodeButton() {
+        mCodeButton = (ImageView)findViewById(R.id.keyboardButton);
         mCodeButton.setImageResource(R.drawable.keyboard_click);
         AnimationDrawable buttonPress = (AnimationDrawable) mCodeButton.getDrawable();
+        if(buttonPress.isRunning()) {
+            buttonPress.stop();
+        }
+        buttonPress.start();
+    }
+
+    public void animateSellButton() {
+        mSellButton = (ImageView)findViewById(R.id.sellButton);
+        mSellButton.setImageResource(R.drawable.briefcase_click);
+        AnimationDrawable buttonPress = (AnimationDrawable) mSellButton.getDrawable();
         if(buttonPress.isRunning()) {
             buttonPress.stop();
         }
