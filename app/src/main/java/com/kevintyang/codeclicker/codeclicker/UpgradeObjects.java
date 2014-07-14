@@ -16,7 +16,6 @@ public class UpgradeObjects {
     private static boolean enoughCode;
     //C for Code M for Money
 
-    static CodeProducer codeExample = new CodeProducer("ExampleName", 20, "Witty tag line/catch phrase should go here", 1000, 1.1 );
     static CodeProducer codingBook = new CodeProducer("Coding Book", .1, "You bought a coding book to learn how to program!",15, 1.1);
     static CodeProducer mom = new CodeProducer("Mom",1, "Your mom wants to help you code!", 343, 1.3);
     static CodeProducer friend = new CodeProducer("Friend", 3, "You made your friend help you program!", 5000, 1.5);
@@ -28,7 +27,6 @@ public class UpgradeObjects {
     static CodeProducer r3d3 = new CodeProducer("R3D3", 1600, "You created a robot to create code for you!", 784000000, 2.5);
     static CodeProducer virus = new CodeProducer("virus", 2424, "You have designed a virus to produce tons of code!", 958000000, 3.0);
 
-    static MoneyProducer moneyExample = new MoneyProducer("ExampleName", .50, "Witty producer tag line", 1000, 1.1);
     static MoneyProducer dropout  = new MoneyProducer("Dropout",1, "You just passed GO to make the money rain!",22, .5);
     static MoneyProducer hackerBeast = new MoneyProducer("Hacker Beast",3, "Hacker Beast just hacked mcJondalds to get you money",550, 1.0);
     static MoneyProducer collegeNerd = new MoneyProducer("College Nerd",5, "College Nerd got lazy and decided to buy your code",6242, 1.2);
@@ -47,7 +45,7 @@ public class UpgradeObjects {
     //add your code producer objects here 
     public static long totalCodeProducerPPS()
     {
-        totalCodePPS = codeExample.getProducerValue() + mom.getProducerValue() + friend.getProducerValue() + collegeUndergrad.getProducerValue() + intern.getProducerValue()
+        totalCodePPS = codingBook.getProducerValue() + mom.getProducerValue() + friend.getProducerValue() + collegeUndergrad.getProducerValue() + intern.getProducerValue()
                 + compSciGrad.getProducerValue() + softwareDeveloper.getProducerValue() + markZookerburg.getProducerValue() + r3d3.getProducerValue() + virus.getProducerValue();
         return totalCodePPS;
     }
@@ -66,7 +64,7 @@ public class UpgradeObjects {
     public static long totalMoneyProducerPPS()
     {
 
-        totalMPPS = moneyExample.getProducerValue() + dropout.getProducerValue() + hackerBeast.getProducerValue()
+        totalMPPS = dropout.getProducerValue() + hackerBeast.getProducerValue()
                 + collegeNerd.getProducerValue() + loogleEmployee.getProducerValue() + ceoOfMyFace.getProducerValue() + startupMyFace.getProducerValue() + loogle.getProducerValue() + c4P0.getProducerValue() + superSecretAgency.getProducerValue() + billBanks.getProducerValue();
         return totalMPPS;
     }

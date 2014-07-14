@@ -16,7 +16,7 @@ public class CodeCounters {
     private static long capacity = 500;
 
     public static void codeClick(){
-        if(capacity> currentCodeCount) {
+        if(capacity >= currentCodeCount + clickValue) {
             currentCodeCount += clickValue;
         }else
         {

@@ -10,17 +10,20 @@ public class MoneyCounters {
     private static long currentMoneyCount = 0;
 
     private static long clickValue = 1;
-    private static long capacity = 500000000;
+    private static long capacity = 500;
 
 
     public synchronized static void sellClick(){
         if(CodeCounters.getCurrentCodeCount() >= clickValue) {
-            currentMoneyCount += clickValue;
-            CodeCounters.codeSell(clickValue);
+            if(currentMoneyCount + clickValue <= capacity) {
+                currentMoneyCount += clickValue;
+                CodeCounters.codeSell(clickValue);
 
-        }else if(currentMoneyCount >= capacity)
-        {
-            currentMoneyCount = capacity;
+            }else if(currentMoneyCount > capacity)
+            {
+                currentMoneyCount = capacity;
+            }
+
         }
     }
 
@@ -49,7 +52,7 @@ public class MoneyCounters {
 
     public static String getCurrentStr(){
 
-        return "$" + currentMoneyCount ;
+        return "$" + currentMoneyCount + " / " +capacity;
     }
 
     public static void increaseClickValue(int newClickValue){
