@@ -9,7 +9,7 @@
 
 
     <ImageView
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/cash_output"
         android:layout_alignParentTop="true"
@@ -17,24 +17,6 @@
         android:layout_alignParentStart="true"
         android:src="@drawable/money_output"
         android:layout_marginTop="7dp" />
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/upgrades_button"
-            android:src="@drawable/two_bills"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="7dp"
-            android:onClick="sendMessage"/>
-
-
-    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
@@ -49,20 +31,19 @@
         android:layout_marginRight="30dp" />
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/sellButton"
         android:src="@drawable/briefcase_flat"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="false"
         android:longClickable="true"
-        android:layout_marginBottom="80dp"
         android:onClick="sellClick"
-        android:layout_marginLeft="35dp" />
+        android:layout_marginTop="300dp" />
+
 
     <ImageView
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/code_output"
         android:layout_alignParentBottom="true"
