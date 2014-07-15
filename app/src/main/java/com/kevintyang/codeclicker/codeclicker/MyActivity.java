@@ -2,7 +2,6 @@ package com.kevintyang.codeclicker.codeclicker;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -10,15 +9,17 @@ import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.PowerManager;
 import android.os.Vibrator;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.view.*;
 
 public class MyActivity extends Activity {
 
@@ -128,10 +129,7 @@ public class MyActivity extends Activity {
 
     //end viewpager stuff
 
-    private void sendMessage(View v) {
-        Intent intent = new Intent(MyActivity.this, UpgradeScreen.class);
-        startActivity(intent);
-    }
+  
 
     @SuppressLint("NewApi")
     protected void onResume(){
@@ -186,6 +184,28 @@ public class MyActivity extends Activity {
         TextView sellTextview = (TextView) findViewById(R.id.cashTextViewSellScreen);
         sellTextview.setText(MoneyCounters.getCurrentStr());
     }
+
+    private void sendMessage() {
+        Intent intent = new Intent(MyActivity.this, UpgradeScreen.class);
+        startActivity(intent);
+
+    }
+
+    public void animateUpgradeButton() {
+        mUpgradeButton = (ImageView)findViewById(R.id.upgradesButton);
+        mUpgradeButton.setImageResource(R.drawable.upgrade_click);
+        AnimationDrawable buttonPress = (AnimationDrawable) mUpgradeButton.getDrawable();
+        if(buttonPress.isRunning()) {
+            buttonPress.stop();
+        }
+        buttonPress.start();
+    }
+    
+    public void upgradeClick(View v){
+        animateUpgradeButton();
+        sendMessage();
+    }
+
 
 
     public void codeClick(View v){

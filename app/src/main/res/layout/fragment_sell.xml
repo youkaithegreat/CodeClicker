@@ -65,13 +65,14 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/upgrades_button_code"
+            android:id="@+id/upgradesButton"
             android:layout_alignParentTop="true"
             android:layout_toLeftOf="@+id/cashTextViewSellScreen"
             android:layout_toStartOf="@+id/cashTextViewSellScreen"
             android:layout_marginRight="215dp"
-            android:src="@drawable/two_bills"
-            android:layout_marginTop="7dp" />
+            android:src="@drawable/two_bills_shadow_3"
+            android:onClick="upgradeClick"
+            android:layout_marginTop="5dp" />
 
     </LinearLayout>
 

@@ -17,12 +17,14 @@
         android:id="@+id/exit_button"
         android:layout_row="1"
         android:layout_column="21"
-        android:src="@drawable/exit_button_shadow_7"
+        android:src="@drawable/exit_button_shadow_3"
         android:layout_marginRight="32dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:onClick="exitClick"/>
+
 
 
 </RelativeLayout>

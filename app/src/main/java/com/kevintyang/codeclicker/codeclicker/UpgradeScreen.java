@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -33,20 +34,27 @@ public class UpgradeScreen extends Activity{
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.screen_upgrade);
 
-        mExitButton = (ImageView)findViewById(R.id.exit_button);
 
-        mExitButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendMessage();
-            }
-
-        });
     }
 
     private void sendMessage() {
         Intent intent = new Intent(UpgradeScreen.this, MyActivity.class);
         startActivity(intent);
+    }
+
+    public void animateUpgradeButton() {
+        mExitButton = (ImageView)findViewById(R.id.exit_button);
+        mExitButton.setImageResource(R.drawable.exit_click);
+        AnimationDrawable buttonPress = (AnimationDrawable) mExitButton.getDrawable();
+        if(buttonPress.isRunning()) {
+            buttonPress.stop();
+        }
+        buttonPress.start();
+    }
+
+    public void exitClick(View v) {
+        animateUpgradeButton();
+        sendMessage();
     }
 
     protected void onResume(){

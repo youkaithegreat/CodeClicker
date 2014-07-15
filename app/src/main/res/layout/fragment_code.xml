@@ -62,11 +62,11 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/upgrades_button_code"
-            android:src="@drawable/two_bills"
+            android:id="@+id/upgradesButton"
+            android:src="@drawable/two_bills_shadow_3"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="7dp"
-            android:onClick="sendMessage"/>
+            android:layout_marginTop="5dp"
+            android:onClick="upgradeClick"/>
 
         <ImageView
             android:layout_width="fill_parent"
@@ -88,7 +88,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="false"
         android:longClickable="true"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="95dp"
         android:onClick="codeClick"/>
 
     <ImageView
