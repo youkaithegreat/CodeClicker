@@ -25,7 +25,8 @@ public class MyActivity extends Activity {
 
     //private variables to avoid creating additional objects
     private ImageView mCodeButton;
-    private ImageView mUpgradeButton;
+    private ImageView mUpgradeButtonCode;
+    private ImageView mUpgradeButtonSell;
     private ImageView mSellButton;
     SectionsPagerAdapter mSectionsPagerAdapter;
     ViewPager mViewPager;
@@ -191,18 +192,34 @@ public class MyActivity extends Activity {
 
     }
 
-    public void animateUpgradeButton() {
-        mUpgradeButton = (ImageView)findViewById(R.id.upgradesButton);
-        mUpgradeButton.setImageResource(R.drawable.upgrade_click);
-        AnimationDrawable buttonPress = (AnimationDrawable) mUpgradeButton.getDrawable();
+    public void animateUpgradeButtonCode() {
+        mUpgradeButtonCode = (ImageView)findViewById(R.id.upgradeButtonCode);
+        mUpgradeButtonCode.setImageResource(R.drawable.upgrade_click);
+        AnimationDrawable buttonPress = (AnimationDrawable) mUpgradeButtonCode.getDrawable();
+        if(buttonPress.isRunning()) {
+            buttonPress.stop();
+        }
+        buttonPress.start();
+    }
+
+    public void animateUpgradeButtonSell() {
+        mUpgradeButtonSell = (ImageView)findViewById(R.id.upgradeButtonSell);
+        mUpgradeButtonSell.setImageResource(R.drawable.upgrade_click);
+        AnimationDrawable buttonPress = (AnimationDrawable) mUpgradeButtonSell.getDrawable();
         if(buttonPress.isRunning()) {
             buttonPress.stop();
         }
         buttonPress.start();
     }
     
-    public void upgradeClick(View v){
-        animateUpgradeButton();
+    public void upgradeClickCode(View v){
+        animateUpgradeButtonCode();
+        sendMessage();
+    }
+
+
+    public void upgradeClickSell(View v){
+        animateUpgradeButtonSell();
         sendMessage();
     }
 

@@ -36,6 +36,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="0"
+        android:textColor="@color/white"
         android:id="@+id/codeTextViewSellScreen"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
@@ -59,19 +60,18 @@
         android:layout_height="fill_parent"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="35dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="0dp" >
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/upgradesButton"
+            android:id="@+id/upgradeButtonSell"
             android:layout_alignParentTop="true"
             android:layout_toLeftOf="@+id/cashTextViewSellScreen"
             android:layout_toStartOf="@+id/cashTextViewSellScreen"
-            android:layout_marginRight="215dp"
             android:src="@drawable/two_bills_shadow_3"
-            android:onClick="upgradeClick"
+            android:onClick="upgradeClickSell"
             android:layout_marginTop="5dp" />
 
     </LinearLayout>
@@ -81,6 +81,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="0"
+        android:textColor="@color/white"
         android:id="@+id/cashTextViewSellScreen"
         android:layout_marginTop="18dp"
         android:layout_alignParentTop="true"

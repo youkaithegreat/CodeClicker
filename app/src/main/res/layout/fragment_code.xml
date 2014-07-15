@@ -55,18 +55,18 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/upgradesButton"
+            android:id="@+id/upgradeButtonCode"
             android:src="@drawable/two_bills_shadow_3"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
-            android:onClick="upgradeClick"/>
+            android:onClick="upgradeClickCode"/>
 
         <ImageView
             android:layout_width="fill_parent"
