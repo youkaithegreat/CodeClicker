@@ -214,13 +214,18 @@ public class MyActivity extends Activity {
     
     public void upgradeClickCode(View v){
         animateUpgradeButtonCode();
+        Vibrator z = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
+        z.vibrate(15);
         sendMessage();
     }
 
 
     public void upgradeClickSell(View v){
         animateUpgradeButtonSell();
+        Vibrator z = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
+        z.vibrate(15);
         sendMessage();
+
     }
 
 
