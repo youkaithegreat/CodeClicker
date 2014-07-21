@@ -25,6 +25,69 @@
         android:layout_marginTop="20dp"
         android:onClick="exitClick"/>
 
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/horizontalScrollView"
+        android:layout_below="@+id/upgradesMenu"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/upgrade1"
+        android:src="@drawable/upgrade_oval"
+        android:layout_below="@+id/horizontalScrollView"
+        android:layout_toRightOf="@+id/horizontalScrollView"
+        android:layout_toEndOf="@+id/horizontalScrollView" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/upgrade2"
+        android:src="@drawable/upgrade_oval"
+        android:layout_toEndOf="@+id/horizontalScrollView"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/upgrade3"
+        android:layout_below="@+id/upgrade2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/upgrade_oval" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/upgrade21"
+        android:layout_below="@+id/horizontalScrollView"
+        android:layout_alignRight="@+id/exit_button"
+        android:layout_alignEnd="@+id/exit_button"
+        android:cropToPadding="false"
+        android:src="@drawable/upgrade_oval" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/upgrade22"
+        android:layout_alignTop="@+id/upgrade2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/upgrade_oval" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/upgrade23"
+        android:layout_alignTop="@+id/upgrade3"
+        android:layout_alignRight="@+id/upgrade22"
+        android:layout_alignEnd="@+id/upgrade22"
+        android:src="@drawable/upgrade_oval" />
 
 
 </RelativeLayout>
