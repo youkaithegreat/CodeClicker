@@ -31,7 +31,6 @@ public class MyActivity extends Activity {
     SectionsPagerAdapter mSectionsPagerAdapter;
     ViewPager mViewPager;
 
-
     final static Handler handler = new Handler();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,20 +41,14 @@ public class MyActivity extends Activity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.setContentView(R.layout.fragment_code);
 
-        //new shit
         setContentView(R.layout.activity_my);
 
         //Sets screen orientation to Portrait. We are also changing orientation in the xml, I might move it to the manifest . .
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-
-       // tick.start();
-        //starts counting the code per second/money per second
-
         mSectionsPagerAdapter = new SectionsPagerAdapter(this, getFragmentManager());
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-
 
         handler.postDelayed(runnable, 300);
 
@@ -82,56 +75,6 @@ public class MyActivity extends Activity {
         }
     };
 
-
-    //ViewPagerStuff
-    /* @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.my, menu);
-        return true;
-    }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    } */
-
-
-  /* Placeholder containing a simple view
-    public static class PlaceholderFragment extends Fragment {
-        // fragment representing placeholder
-        private static final String ARG_SECTION_NUMBER = "section_number";
-
-       // returns new instance of this fragment
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
-            Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
-        }
-
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_my, container, false);
-            return rootView;
-        }
-    }*/
-
-    //end viewpager stuff
-
-  
-
     @SuppressLint("NewApi")
     protected void onResume(){
         super.onResume();
@@ -156,13 +99,11 @@ public class MyActivity extends Activity {
         Log.d("Immersive Mode Activity", "onResume Called!");
     }
 
-
     protected void onStop() {
         super.onStop();
         handler.removeCallbacks(runnable);
 
     }
-
 
     public void onPause(){
         super.onPause();
@@ -219,7 +160,6 @@ public class MyActivity extends Activity {
         sendMessage();
     }
 
-
     public void upgradeClickSell(View v){
         animateUpgradeButtonSell();
         Vibrator z = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
@@ -227,8 +167,6 @@ public class MyActivity extends Activity {
         sendMessage();
 
     }
-
-
 
     public void codeClick(View v){
         animateCodeButton();
@@ -238,7 +176,6 @@ public class MyActivity extends Activity {
         z.vibrate(30);
     }
 
-
     public void sellClick(View v){
         animateSellButton();
         MoneyCounters.sellClick();
@@ -246,8 +183,6 @@ public class MyActivity extends Activity {
         Vibrator g = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
         g.vibrate(30);
     }
-
-
 
     public void animateCodeButton() {
         mCodeButton = (ImageView)findViewById(R.id.keyboardButton);
@@ -276,8 +211,6 @@ public class MyActivity extends Activity {
         return true;
     }
 
-
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -289,7 +222,6 @@ public class MyActivity extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
-
 
     private Runnable resetImmersive = new Runnable(){
 
