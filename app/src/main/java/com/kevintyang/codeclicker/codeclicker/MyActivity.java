@@ -4,12 +4,15 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.content.pm.ActivityInfo;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Vibrator;
+import android.preference.PreferenceManager;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -28,13 +31,18 @@ public class MyActivity extends Activity {
     private ImageView mUpgradeButtonCode;
     private ImageView mUpgradeButtonSell;
     private ImageView mSellButton;
+    public static final String codeClickSave = "Code Clicker Save File" ;
     SectionsPagerAdapter mSectionsPagerAdapter;
     ViewPager mViewPager;
+    String ccString = "Current Code Count";
+    public static SharedPreferences sharedPrefs;
 
     final static Handler handler = new Handler();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        loadSharedPreferences();
 
         //Remove title bar. Eventually I need to the learn the 4.4 call to get Immersion Mode (no On Screen Navs
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -54,6 +62,23 @@ public class MyActivity extends Activity {
 
     }
 
+    private synchronized void loadSharedPreferences(){
+        long cccountinit = 0;
+        sharedPrefs = getSharedPreferences(codeClickSave, Context.MODE_PRIVATE);
+        CodeCounters.setCodeCount(sharedPrefs.getLong("Current Code Count", cccountinit));
+
+    }
+
+    public synchronized void saveSharedPreferences()
+    {
+        String codeClickSaveFile = "Code Clicker Save File";
+        SharedPreferences sharedPrefs = getSharedPreferences(codeClickSaveFile, Context.MODE_PRIVATE);
+
+        Editor editor = sharedPrefs.edit();
+        editor.putLong("Current Code Count", CodeCounters.getCurrentCodeCount());
+        editor.commit();
+
+    }
     Runnable runnable = new Runnable() {
 
         public int timeCheck = 0;
@@ -70,7 +95,6 @@ public class MyActivity extends Activity {
             updateCodeTextView();
             updateSellTextView();
             handler.postDelayed(this, 300);
-
 
         }
     };
@@ -102,13 +126,13 @@ public class MyActivity extends Activity {
     protected void onStop() {
         super.onStop();
         handler.removeCallbacks(runnable);
-
+        saveSharedPreferences();
     }
 
     public void onPause(){
         super.onPause();
         handler.removeCallbacks(runnable);
-
+        saveSharedPreferences();
     }
 
     public void updateCodeTextView() {

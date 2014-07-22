@@ -1,6 +1,9 @@
 package com.kevintyang.codeclicker.codeclicker;
 
+import android.content.Context;
 import android.view.View;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 
 /**
  * Created by Kevin on 7/9/2014.
@@ -22,6 +25,11 @@ public class CodeCounters {
         {
             currentCodeCount = capacity;
         }
+    }
+
+    public static void setCodeCount(long sharedPrefCodeCount)
+    {
+        currentCodeCount = sharedPrefCodeCount;
     }
 
     public static void codeSell(long clickValue){
@@ -62,5 +70,6 @@ public class CodeCounters {
     public String getCapacity(){
         return " / "+capacity;
     }
+
 
 }
