@@ -107,4 +107,8 @@ public class UpgradeScreen extends Activity{
         }
         return super.onKeyDown(keyCode, event);
     }
+
+    public void upgradeCodeCapacity(View v){
+        CapacityUpgrades.buyPunchCard();
+    }
 }

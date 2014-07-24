@@ -63,9 +63,14 @@ public class CodeCounters {
 
     }
 
+    public static long getCurrentCodeCapacity(){
+        return capacity;
+    }
+    //change capacity also sets capacity
     public static void changeCapacity(long newCapacity){
         capacity = newCapacity;
     }
+
 
     public String getCapacity(){
         return " / "+capacity;
