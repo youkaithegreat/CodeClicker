@@ -24,6 +24,9 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 public class MyActivity extends Activity {
 
     //private variables to avoid creating additional objects
@@ -44,12 +47,17 @@ public class MyActivity extends Activity {
 
         loadSharedPreferences();
 
+
+
+
+
         //Remove title bar. Eventually I need to the learn the 4.4 call to get Immersion Mode (no On Screen Navs
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.setContentView(R.layout.fragment_code);
 
         setContentView(R.layout.activity_my);
+
 
         //Sets screen orientation to Portrait. We are also changing orientation in the xml, I might move it to the manifest . .
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -59,6 +67,8 @@ public class MyActivity extends Activity {
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
         handler.postDelayed(runnable, 300);
+
+
 
     }
 
