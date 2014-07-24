@@ -78,6 +78,10 @@ public class CodeCounters {
         }
     }
 
+    public static void loadCapacity(long newCapacity){
+        capacity = newCapacity;
+    }
+
 
     public String getCapacity(){
         return " / "+capacity;

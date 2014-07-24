@@ -67,7 +67,7 @@ public class MyActivity extends Activity {
         long capacityInit = 500;
         sharedPrefs = getSharedPreferences(codeClickSave, Context.MODE_PRIVATE);
         CodeCounters.setCodeCount(sharedPrefs.getLong("Current Code Count", cccountinit));
-        CodeCounters.changeCapacity(sharedPrefs.getLong("Current Code Capacity", capacityInit));
+        CodeCounters.loadCapacity(sharedPrefs.getLong("Current Code Capacity", capacityInit));
     }
 
     public synchronized void saveSharedPreferences()
