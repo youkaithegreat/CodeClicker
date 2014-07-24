@@ -67,8 +67,15 @@ public class CodeCounters {
         return capacity;
     }
     //change capacity also sets capacity
-    public static void changeCapacity(long newCapacity){
-        capacity = newCapacity;
+    public static boolean changeCapacity(long newCapacity, long price){
+        if(MoneyCounters.getCurrentMoneyCount()>=price) {
+            MoneyCounters.subtractCostOfUpgrades(price);
+            capacity = newCapacity;
+            return true;
+        }else
+        {
+            return false;
+        }
     }
 
 

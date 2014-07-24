@@ -46,8 +46,16 @@ public class MoneyCounters {
 
     }
 
-    public static void changeCapacity(long newCapacity){
-        capacity = newCapacity;
+    public static boolean changeCapacity(long newCapacity, long price){
+        if(currentMoneyCount>=price) {
+            currentMoneyCount = currentMoneyCount-price;
+            capacity = newCapacity;
+            return true;
+        }else
+        {
+            return false;
+        }
+
     }
 
     public static String getCurrentStr(){

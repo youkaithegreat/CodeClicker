@@ -17,6 +17,12 @@ public class CodeCapacity {
     }
 
     public void buyCapacity(){
-        CodeCounters.changeCapacity(newCapacityCode);
+        if(CodeCounters.changeCapacity(newCapacityCode, costCode))
+        {
+            //toast, successful purchase
+        }else
+        {
+            //not enough money toast
+        }
     }
 }

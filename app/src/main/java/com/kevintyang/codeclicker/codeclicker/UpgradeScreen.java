@@ -2,12 +2,14 @@ package com.kevintyang.codeclicker.codeclicker;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Vibrator;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -20,6 +22,8 @@ import android.widget.ImageView;
  */
 public class UpgradeScreen extends Activity{
     private ImageView mExitButton;
+
+
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
@@ -108,7 +112,19 @@ public class UpgradeScreen extends Activity{
         return super.onKeyDown(keyCode, event);
     }
 
-    public void upgradeCodeCapacity(View v){
+    public void upgradeCCPunchCard(View v){
         CapacityUpgrades.buyPunchCard();
+        vibrate();
+    }
+
+    public void upgradeMCPockets(View v) {
+        CapacityUpgrades.buyPockets();
+        vibrate();
+
+    }
+
+    public void vibrate(){
+        final Vibrator z = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
+        z.vibrate(20);
     }
 }

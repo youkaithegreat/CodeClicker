@@ -40,7 +40,8 @@
         android:src="@drawable/upgrade_oval"
         android:layout_below="@+id/horizontalScrollView"
         android:layout_toRightOf="@+id/horizontalScrollView"
-        android:layout_toEndOf="@+id/horizontalScrollView" />
+        android:layout_toEndOf="@+id/horizontalScrollView"
+        android:onClick="upgradeCCPunchCard"/>
 
     <ImageView
         android:layout_width="wrap_content"
@@ -49,7 +50,8 @@
         android:src="@drawable/upgrade_oval"
         android:layout_toEndOf="@+id/horizontalScrollView"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="upgradeMCPockets"/>
 
     <ImageView
         android:layout_width="wrap_content"
