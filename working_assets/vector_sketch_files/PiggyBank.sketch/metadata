@@ -10,16 +10,10 @@
 	<string>b2079fe10151ad0eef6cc553b7369ec78d67b9b5</string>
 	<key>fonts</key>
 	<array>
-		<string>Helvetica</string>
-		<string>Arial-BoldMT</string>
-		<string>Helvetica-Bold</string>
-		<string>Arial-Black</string>
-		<string>Roboto-Regular</string>
-		<string>RobotoCondensed-Regular</string>
-		<string>RobotoCondensed-Bold</string>
+		<string>ArialHebrewScholar</string>
 	</array>
 	<key>length</key>
-	<integer>1912536</integer>
+	<integer>41038</integer>
 	<key>version</key>
 	<integer>37</integer>
 </dict>
