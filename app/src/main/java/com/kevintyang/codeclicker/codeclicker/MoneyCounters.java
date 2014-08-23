@@ -46,6 +46,18 @@ public class MoneyCounters {
 
     }
 
+    public static long getCurrentMoneyCapacity(){
+        return capacity;
+    }
+
+    public static void setMoneyCount(long mCount){
+        currentMoneyCount = mCount;
+    }
+
+    public static void setMoneyCapacity(long mCapacity){
+        capacity = mCapacity;
+    }
+
     public static boolean changeCapacity(long newCapacity, long price){
         if(currentMoneyCount>=price) {
             currentMoneyCount = currentMoneyCount-price;

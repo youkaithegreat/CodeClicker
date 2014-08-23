@@ -72,11 +72,16 @@ public class MyActivity extends Activity {
     }
 
     private synchronized void loadSharedPreferences(){
-        long cccountinit = 0;
-        long capacityInit = 500;
+        //initial values are set to what the game should start at.
+        long cCountInit = 0;
+        long cCapacityInit = 500;
+        long mCountInit = 0;
+        long mCapacityInit = 0;
         sharedPrefs = getSharedPreferences(codeClickSave, Context.MODE_PRIVATE);
-        CodeCounters.setCodeCount(sharedPrefs.getLong("Current Code Count", cccountinit));
-        CodeCounters.loadCapacity(sharedPrefs.getLong("Current Code Capacity", capacityInit));
+        CodeCounters.setCodeCount(sharedPrefs.getLong("Current Code Count", cCountInit));
+        CodeCounters.loadCapacity(sharedPrefs.getLong("Current Code Capacity", cCapacityInit));
+        MoneyCounters.setMoneyCount(sharedPrefs.getLong("Current Money Count", mCountInit));
+        MoneyCounters.setMoneyCapacity(sharedPrefs.getLong("Current Money Capacity", mCapacityInit));
     }
 
     public synchronized void saveSharedPreferences()
@@ -87,6 +92,8 @@ public class MyActivity extends Activity {
         Editor editor = sharedPrefs.edit();
         editor.putLong("Current Code Count", CodeCounters.getCurrentCodeCount());
         editor.putLong("Current Code Capacity", CodeCounters.getCurrentCodeCapacity());
+        editor.putLong("Current Money Count", MoneyCounters.getCurrentMoneyCount());
+        editor.putLong("Current Money Capacity", MoneyCounters.getCurrentMoneyCapacity());
         editor.commit();
 
     }
