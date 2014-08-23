@@ -123,6 +123,17 @@ public class UpgradeScreen extends Activity{
 
     }
 
+    public void codeClickUpgrade(View v){
+        UpgradeObjects.buyCodeClickUpgrades();
+        vibrate();
+
+    }
+
+    public void moneyClickUpgrade(View v){
+        UpgradeObjects.buyMoneyClickUpgrades();
+        vibrate();
+    }
+
     public void vibrate(){
         final Vibrator z = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
         z.vibrate(20);
