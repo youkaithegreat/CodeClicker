@@ -1,11 +1,19 @@
-CodeClicker
+# CodeClicker
 ===========
+This project was a small side project I was doing while simultaneously taking the Intro to Programming course at The University of Texas at Austin. It's essentially a cookie clicker code. 
 
+### How To Access
+It is available on the google play store. Currently the java backend code is all there, but the project is missing visual assets. 
+
+### Contribution
+If you would like to contribute to this project, just let me know! If you look through the code there are a lot of upgrades that can be immediately added once I have visual assets. 
+
+### Information
 Code Clicker now has two branches (Master and Fragment). 
 
 The fragment branch is a branch that is trying to integrate swipe functionality onto the screen. The master banch is the current working branch with the Code Clicker back end. 
 
-Master Branch: 
+### Master Branch: 
 The button clicks, animates and provides haptic feedback. 
 The code capacity and money capactiy has been implemented. 
 The Money capacity is untested, but mirrors the Code capacity. 
@@ -15,7 +23,7 @@ The Code Upgrades and Sell Upgrades have been implmeneted into the Per Second ca
 The bssic class to upgrade capacity has also been created, but they have not been propagated. 
 We will also need to re-evaluate adding value to the click .
 
-Fragment Branch: 
+### Fragment Branch: 
 Has two screen swipe functionality. 
 Does not include screen updating capacity. 
 
