@@ -4,6 +4,7 @@ This project was a small side project I was doing while simultaneously taking th
 
 ### How To Access
 It is available on the google play store. Currently the java backend code is all there, but the project is missing visual assets. 
+https://play.google.com/store/apps/details?id=com.kevintyang.codeclicker.codeclicker&hl=en
 
 ### Contribution
 If you would like to contribute to this project, just let me know! If you look through the code there are a lot of upgrades that can be immediately added once I have visual assets. 
