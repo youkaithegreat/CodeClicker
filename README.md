@@ -1,4 +1,10 @@
 # CodeClicker
+
+
+#This project has now been deprecated
+
+
+
 ===========
 This project was a small side project I was doing while simultaneously taking the Intro to Programming course at The University of Texas at Austin. It's essentially a cookie clicker code. 
 
