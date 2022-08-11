@@ -1,7 +1,7 @@
 # CodeClicker
 
 
-#This project has now been deprecated
+# This project has now been deprecated
 
 
 
